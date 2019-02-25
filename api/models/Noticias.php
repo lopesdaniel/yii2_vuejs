@@ -48,4 +48,16 @@ class Noticias extends \yii\db\ActiveRecord
             'categoria_id' => 'Categoria ID',
         ];
     }
+
+    //Realizando a relação com a tabela Categoria
+    public function getCategoria()
+    {
+        return $this->hasOne(Categorias::className(), ['id' => 'categoria_id']);
+    }
+    //Ao adicionar expands na URL consigo recuperar os dados do relacionamento
+    public function extraFields()
+    {
+        return ['categoria'];
+    }
+
 }
