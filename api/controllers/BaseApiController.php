@@ -18,15 +18,15 @@ class BaseApiController extends ActiveController
     public function behaviors()
     {
         $behaviors = parent::behaviors();
-        $auth = $behaviors['authenticatior'];
-        unset($behaviors['authenticatior']);
+        $auth = $behaviors['authenticator'];
+        unset($behaviors['authenticator']);
 
         $behaviors['corsFilter'] = [
             'class' => \yii\filters\Cors::className()
         ];
 
-        $behaviors['authenticatior'] = $auth;
-        $behaviors['authenticatior']['except'] = ['options'];
+        $behaviors['authenticator'] = $auth;
+        $behaviors['authenticator']['except'] = ['options'];
 
         
         return $behaviors;
