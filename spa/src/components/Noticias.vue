@@ -3,22 +3,26 @@
     <h1 class="display-3">Cadastro de Notícias</h1>
     <div class="row">
       <div class="col-md-5">
-        <form action>
+        <form action="">
             <div class="form-group">
-                <label for="Título">Título</label>
+                <label for="titulo">Título</label>
                 <input type="text" class="form-control" id="titulo" v-model="Noticia.titulo" />
             </div>
             <div class="form-group">
-                <label for="Conteúdo">Conteúdo</label>
+                <label for="conteudo">Conteúdo</label>
                 <textarea class="form-control" id="conteudo" v-model="Noticia.conteudo" />
             </div>
             <div class="form-group">
                 <label for="categorias">Categorias</label>
-                <select name="" id="" class="form-control" v-model="Noticia.categoria_id">
+                <select name="" id="categorias" class="form-control" v-model="Noticia.categoria_id">
                     <option value="">Selecione</option>
-                    <option value="categorias.id" v-for="categoria in Categorias.dados" 
+                    <option v-for="categoria in Categorias.dados" v-bind:value="categoria.id"
                         :selected="Noticia.categoria_id == categoria.id"> {{ categoria.nome }} </option>
                 </select>
+            </div>
+            <hr>
+            <div class="form-group">
+                <button type="button" class="btn btn-success float-right" @click="salvarNoticia(Noticia)">Salvar</button>
             </div>
         </form>
       </div>
@@ -66,7 +70,7 @@
                     categoria_id: "",
                     categorias: {}
                 },
-                Categorias: [],
+                Categorias: []
             }
         },
         created(){
@@ -84,12 +88,33 @@
                     this.Categorias = response.body;
                 });
             },
-            carregarNoticia(){
+            carregarNoticia(Noticia){
                 this.Noticia.id = Noticia.id;
                 this.Noticia.titulo = Noticia.titulo;
                 this.Noticia.conteudo = Noticia.conteudo;
                 this.Noticia.categoria_id = Noticia.categoria_id;
-                this.Noticia.categorias = Noticias.categorias;
+                this.Noticia.categorias = Noticia.categorias;
+            },
+            salvarNoticia(Noticia){
+
+                let data = {
+                    titulo: Noticia.titulo,
+                    conteudo: Noticia.conteudo,
+                    categoria_id: Noticia.categoria_id
+                };
+
+                this.$http.post('http://localhost:8080/noticias', data).then( () => {
+                    this.listarNoticias();
+                    this.Noticia = {
+                        id: "",
+                        titulo: "",
+                        conteudo: "",
+                        categoria_id: "",
+                        categorias: {}
+                    };
+                    alert("Notícia salva com Sucesso !");
+                });
+
             }
         }
     };
