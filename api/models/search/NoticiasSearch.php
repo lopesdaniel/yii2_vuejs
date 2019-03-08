@@ -46,6 +46,9 @@ class NoticiasSearch extends Noticias
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pageSize' => $params['per-page'] ?? 5
+            ]
         ]);
 
         $this->load($params);

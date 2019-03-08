@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6491020-6270-472c-bf33-00c00827da5a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/api/models/search/NoticiasSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/search/NoticiasSearch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spa/src/components/Noticias.vue" beforeDir="false" afterPath="$PROJECT_DIR$/spa/src/components/Noticias.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +19,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spa/src/components/Noticias.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="143" column="45" selection-start-line="143" selection-start-column="45" selection-end-line="143" selection-end-column="45" />
+            <state relative-caret-position="179">
+              <caret line="80" column="132" selection-start-line="80" selection-start-column="132" selection-end-line="80" selection-end-column="132" />
+              <folding>
+                <element signature="e#2510#2517#1" expanded="true" />
+                <element signature="e#2982#2989#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/models/search/NoticiasSearch.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -34,6 +48,7 @@
       <list>
         <option value="$PROJECT_DIR$/api/config/web.php" />
         <option value="$PROJECT_DIR$/api/models/Noticias.php" />
+        <option value="$PROJECT_DIR$/api/models/search/NoticiasSearch.php" />
         <option value="$PROJECT_DIR$/spa/src/components/Noticias.vue" />
       </list>
     </option>
@@ -155,6 +170,13 @@
             <path>
               <item name="yii2_vuejs" type="b2602c69:ProjectViewProjectNode" />
               <item name="yii2_vuejs" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yii2_vuejs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yii2_vuejs" type="462c0819:PsiDirectoryNode" />
               <item name="spa" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -195,12 +217,12 @@
       <option name="presentableId" value="Default" />
       <updated>1551825870145</updated>
       <workItem from="1551825882269" duration="11871000" />
-      <workItem from="1552009139573" duration="1103000" />
+      <workItem from="1552009139573" duration="6752000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12974000" />
+    <option name="totallyTimeSpent" value="18623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -258,10 +280,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/search/NoticiasSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spa/src/components/Noticias.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="143" column="45" selection-start-line="143" selection-start-column="45" selection-end-line="143" selection-end-column="45" />
+        <state relative-caret-position="179">
+          <caret line="80" column="132" selection-start-line="80" selection-start-column="132" selection-end-line="80" selection-end-column="132" />
+          <folding>
+            <element signature="e#2510#2517#1" expanded="true" />
+            <element signature="e#2982#2989#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

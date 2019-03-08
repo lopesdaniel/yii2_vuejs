@@ -32,6 +32,22 @@
         <table class="table table-hover table-striped">
           <thead>
             <tr>
+                <td colspan="2">
+                    Mostrando de <strong>{{ ((Noticias.meta.currentPage -1) * Noticias.meta.perPage) +1 }}</strong>
+                    até <strong> {{ Noticias.meta.currentPage * Noticias.meta.perPage }} </strong>
+                    do total de <strong>{{ Noticias.meta.totalCount }}</strong>.<br>
+                    Página <strong>{{ Noticias.meta.currentPage }}</strong> de <strong>{{ Noticias.meta.pageCount }}</strong>
+                </td>
+                <td colspan="2">
+                    <label for="per-page">Mostar por página:</label>
+                    <select name="" id="per-page" v-model="per_page" @change="listarNoticias(pagina, per_page)">
+                        <option :value="10" :selected="per_page == 10">10</option>
+                        <option :value="30" :selected="per_page == 30">30</option>
+                        <option :value="50" :selected="per_page == 50">50</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
               <th>Cód</th>
               <th>Título</th>
               <th>Categoria</th>
@@ -49,6 +65,25 @@
             </tr>
           </tbody>
         </table>
+          <hr>
+          <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                  <li class="page-item" :class="{'disabled': Noticias.meta.currentPage == 1}">
+                      <a class="page-link" href="javascript:void(0);" @click="listarNoticias(Noticias.meta.currentPage - 1, per_page)" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item" v-for="i in Noticias.meta.pageCount" :class='{"active": Noticias.meta.currentPage == i}'>
+                      <a class="page-link" href="javascript:void(0);" @click="listarNoticias(i, per_page)">{{ i }}</a>
+                  </li>
+
+                  <li class="page-item" :class="{'disabled': Noticias.meta.currentPage == Noticias.meta.pageCount}">
+                      <a class="page-link" href="javascript:void(0);" @click="listarNoticias(Noticias.meta.currentPage + 1, per_page)" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                      </a>
+                  </li>
+              </ul>
+          </nav>
       </div>
     </div>
   </div>
@@ -72,16 +107,29 @@
                     categoria_id: "",
                     categorias: {}
                 },
-                Categorias: []
+                Categorias: [],
+                pagina: 1,
+                per_page: 5
             }
         },
         created(){
-            this.listarNoticias();
+            this.listarNoticias(this.pagina, this.per_page);
             this.listarCategorias();
         },
         methods: {
-            listarNoticias(){
-                this.$http.get('http://localhost:8080/noticias?expand=categoria').then(response => {
+            listarNoticias(pagina, per_page){
+
+                let url = 'http://localhost:8080/noticias?expand=categoria';
+
+                pagina = typeof pagina == "undefined" ? 1 : pagina;
+                url += "&page" + pagina;
+                this.pagina = pagina;
+
+                pagina = typeof per_page == "undefined" ? 1 : per_page;
+                url += "&per_page" + pagina;
+                this.pagina = per_page;
+
+                this.$http.get(url).then(response => {
                     this.Noticias = response.body;
                 });
             },
@@ -117,7 +165,7 @@
                 }
 
                 prom.then( () => {
-                    this.listarNoticias();
+                    this.listarNoticias(this.pagina, this.per_page);
                     this.Noticia = {
                         id: "",
                         titulo: "",
@@ -141,7 +189,7 @@
                 if(confirm("Deseja excluir a notícia " + Noticia.titulo + "?")){
                     this.$http.delete('http://localhost:8080/noticias/' + Noticia.id).then(() => {
                        alert("Excluído com sucesso !");
-                       this.listarNoticias();
+                       this.listarNoticias(this.pagina, this.per_page);
                     });
                 }
             }
