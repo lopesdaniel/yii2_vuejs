@@ -4,6 +4,7 @@
     <div class="row">
       <div class="col-md-5">
         <form action="">
+            <input type="hidden" id="id" v-model="Noticia.id">
             <div class="form-group">
                 <label for="titulo">Título</label>
                 <input type="text" class="form-control" id="titulo" v-model="Noticia.titulo" />
@@ -22,6 +23,7 @@
             </div>
             <hr>
             <div class="form-group">
+                <button type="button" class="btn btn-warning float-left">Limpar</button>
                 <button type="button" class="btn btn-success float-right" @click="salvarNoticia(Noticia)">Salvar</button>
             </div>
         </form>
@@ -103,7 +105,18 @@
                     categoria_id: Noticia.categoria_id
                 };
 
-                this.$http.post('http://localhost:8080/noticias', data).then( () => {
+                let prom = null;
+                let msg = "";
+
+                if(Noticia.id === ""){
+                    prom = this.$http.post('http://localhost:8080/noticias', data);
+                    msg = "Notícia cadastrada com Sucesso !";
+                } else {
+                    prom = this.$http.put('http://localhost:8080/noticias/' + Noticia.id, data);
+                    msg = "Notícia alterada com Sucesso !";
+                }
+
+                prom.then( () => {
                     this.listarNoticias();
                     this.Noticia = {
                         id: "",
@@ -112,9 +125,8 @@
                         categoria_id: "",
                         categorias: {}
                     };
-                    alert("Notícia salva com Sucesso !");
+                    alert(msg);
                 });
-
             }
         }
     };
