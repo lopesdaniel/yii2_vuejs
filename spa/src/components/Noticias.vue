@@ -23,7 +23,7 @@
             </div>
             <hr>
             <div class="form-group">
-                <button type="button" class="btn btn-warning float-left">Limpar</button>
+                <button type="button" class="btn btn-warning float-left" @click="limparCampos">Limpar</button>
                 <button type="button" class="btn btn-success float-right" @click="salvarNoticia(Noticia)">Salvar</button>
             </div>
         </form>
@@ -44,7 +44,7 @@
               <td><a href="javascript:void(0);" @click="carregarNoticia(noticia)"> {{ noticia.titulo }} </a></td>
               <td>{{ noticia.categoria.nome }}</td>
               <td>
-                  <a href="javascript:void(0);" class="text-danger"><i class="fa fa-trash"></i></a>
+                  <a href="javascript:void(0);" class="text-danger" @click="excluirNoticia(noticia)"><i class="fa fa-trash"></i></a>
               </td>
             </tr>
           </tbody>
@@ -127,6 +127,23 @@
                     };
                     alert(msg);
                 });
+            },
+            limparCampos(){
+                this.Noticia = {
+                    id: "",
+                    titulo: "",
+                    conteudo: "",
+                    categoria_id: "",
+                    categorias: {}
+                };
+            },
+            excluirNoticia(Noticia){
+                if(confirm("Deseja excluir a notícia " + Noticia.titulo + "?")){
+                    this.$http.delete('http://localhost:8080/noticias/' + Noticia.id).then(() => {
+                       alert("Excluído com sucesso !");
+                       this.listarNoticias();
+                    });
+                }
             }
         }
     };
