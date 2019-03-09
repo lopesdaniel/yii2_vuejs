@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Firebase\JWT\JWT;
 use yii\base\Module;
+use yii\filters\auth\HttpBearerAuth;
 use yii\filters\auth\QueryParamAuth;
 use yii\rest\ActiveController;
 
@@ -21,18 +22,6 @@ class BaseApiController extends ActiveController
     public function __construct($id, Module $module, array $config = [])
     {
         parent::__construct($id, $module, $config);
-
-        $token = [
-            'exp' => time() + (60 * 60 * 10),
-            'dados' => [
-                'nome' => "Daniel Lopes",
-                'cidade' => "Fortaleza"
-            ]
-        ];
-
-        $jwt = JWT::encode($token, \Yii::$app->params['token_key']);
-
-
     }
 
     public function behaviors()
@@ -40,7 +29,10 @@ class BaseApiController extends ActiveController
         $behaviors = parent::behaviors();
 
         $behaviors['authenticator'] = [
-            'class' => QueryParamAuth::className()
+            'class' => HttpBearerAuth::className(),
+            'except' => [
+                'usuarios/login'
+            ]
         ];
 
         $auth = $behaviors['authenticator'];

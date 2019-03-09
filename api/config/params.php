@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'adminEmail' => 'admin@example.com',
-    'token_key' => 'admin@123'
+    'adminEmail' => 'admin@admin.com',
+    'token_key' => '123456'
 ];

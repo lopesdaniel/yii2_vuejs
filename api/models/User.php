@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use Firebase\JWT\JWT;
 use yii\db\ActiveRecord;
 
 class User extends ActiveRecord implements \yii\web\IdentityInterface
@@ -25,7 +26,15 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        return static::findOne(['$access_token' => $token]);
+        try {
+            $decoder = JWT::decode($token, \Yii::$app->params['token_key'], ['HS256']);
+
+            return static::findOne(['access_token' => $decoder->dados->access_token]);
+        } catch (ExpiredException $ex){
+            echo $ex->getMessage();
+        }
+
+        return null;
     }
 
     /**
@@ -72,5 +81,13 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
     public function validatePassword($password)
     {
         return \Yii::$app->security->validatePassword($password, $this->getAttribute('senha'));
+
+//        $senha = $this->getAttribute('email');
+//
+//        if($password == $senha){
+//            return true;
+//        } else {
+//            return false;
+//        }
     }
 }
