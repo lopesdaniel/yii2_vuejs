@@ -67,6 +67,7 @@
       <path value="$PROJECT_DIR$/api/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/api/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/api/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/api/vendor/firebase/php-jwt" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

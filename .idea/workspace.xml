@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6491020-6270-472c-bf33-00c00827da5a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/yii2_vuejs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/yii2_vuejs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/api/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/config/params.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/config/params.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/BaseApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/BaseApiController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +25,7 @@
         <entry file="file://$PROJECT_DIR$/spa/src/components/Noticias.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
-              <caret line="84" column="19" lean-forward="true" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+              <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
               <folding>
                 <element signature="e#2510#2517#1" expanded="true" />
                 <element signature="e#2982#2989#1" expanded="true" />
@@ -30,19 +35,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/models/User.php">
+        <entry file="file://$PROJECT_DIR$/api/controllers/BaseApiController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="73" column="95" lean-forward="true" selection-start-line="73" selection-start-column="95" selection-end-line="73" selection-end-column="95" />
+            <state relative-caret-position="323">
+              <caret line="32" column="68" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
+              <folding>
+                <element signature="e#35#56#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/models/search/NoticiasSearch.php">
+        <entry file="file://$PROJECT_DIR$/api/config/params.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+            <state relative-caret-position="68">
+              <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -60,6 +68,8 @@
         <option value="$PROJECT_DIR$/api/models/search/NoticiasSearch.php" />
         <option value="$PROJECT_DIR$/spa/src/components/Noticias.vue" />
         <option value="$PROJECT_DIR$/api/models/User.php" />
+        <option value="$PROJECT_DIR$/api/config/params.php" />
+        <option value="$PROJECT_DIR$/api/controllers/BaseApiController.php" />
       </list>
     </option>
   </component>
@@ -130,6 +140,7 @@
       <path value="$PROJECT_DIR$/api/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/api/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/api/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/api/vendor/firebase/php-jwt" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -163,7 +174,13 @@
               <item name="yii2_vuejs" type="b2602c69:ProjectViewProjectNode" />
               <item name="yii2_vuejs" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yii2_vuejs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yii2_vuejs" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -203,12 +220,12 @@
       <option name="presentableId" value="Default" />
       <updated>1551825870145</updated>
       <workItem from="1551825882269" duration="11871000" />
-      <workItem from="1552009139573" duration="8518000" />
+      <workItem from="1552009139573" duration="11761000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20389000" />
+    <option name="totallyTimeSpent" value="23632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -276,7 +293,7 @@
     <entry file="file://$PROJECT_DIR$/spa/src/components/Noticias.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
-          <caret line="84" column="19" lean-forward="true" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+          <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
           <folding>
             <element signature="e#2510#2517#1" expanded="true" />
             <element signature="e#2982#2989#1" expanded="true" />
@@ -286,8 +303,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="73" column="95" lean-forward="true" selection-start-line="73" selection-start-column="95" selection-end-line="73" selection-end-column="95" />
+        <state relative-caret-position="136">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/config/params.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/BaseApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="32" column="68" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
+          <folding>
+            <element signature="e#35#56#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
